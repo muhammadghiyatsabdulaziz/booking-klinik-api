@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: booking-klinik-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_SSLMODE
+        value: require
+      # Tambahkan environment variables lain dari .env Anda
