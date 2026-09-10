@@ -19,7 +19,8 @@ WORKDIR /var/www/html
 COPY . .
 
 # 5. Install pustaka Laravel (menggunakan --no-fund agar bersih dari notice funding)
-RUN composer install --no-dev --optimize-autoloader --no-fund
+RUN composer install --no-dev --optimize-autoloader
+
 
 # 6. Atur izin folder agar Laravel bisa menulis log dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
